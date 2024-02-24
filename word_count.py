@@ -45,7 +45,11 @@ def mapper(sequence):
     new_sequence = []
     for _, text in sequence:
         words = text.split()
+    
         for word in words:
+            word = word.replace(",", "")
+            word = word.replace(".", "")
+            word = Word.lower()
             new_sequence.append((word, 1))
     return new_sequence
 
